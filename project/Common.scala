@@ -3,13 +3,13 @@ import sbt._
 
 object Common {
 
-  val Settings: Seq[Def.Setting[_]] = inThisBuild(Seq(
+  val Settings: Seq[Def.Setting[_]] = Seq(
     organization := "net.dericbourg.daily-utils",
     version := "0.1.0-SNAPSHOT",
     scalaVersion := "2.12.1",
     crossScalaVersions := Seq("2.10.6", "2.11.8", "2.12.1"),
     scalacOptions ++= Seq("-deprecation", "-unchecked")
-  ))
+  )
 
   val PublishMaven: Seq[Def.Setting[_]] = Seq(
     licenses := Seq("GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007" -> url("https://www.gnu.org/licenses/gpl-3.0.en.html")),
