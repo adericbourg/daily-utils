@@ -3,7 +3,7 @@ package net.dericbourg.daily.utils.typesafe
 import java.lang.{Boolean, Double, Long}
 import java.util
 
-import com.typesafe.config.Config
+import com.typesafe.config._
 
 package object config {
 
