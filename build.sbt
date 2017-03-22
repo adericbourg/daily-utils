@@ -4,8 +4,16 @@ lazy val typesafeConfig = (project in file("typesafe/config"))
   .settings(name := "daily-utils-typesafe-config")
   .settings(Common.Settings)
   .settings(Common.PublishMaven)
+  .settings(libraryDependencies += "com.typesafe" % "config" % "1.3.1" % Provided)
+  .settings(Tests.Dependencies)
+
+lazy val twitterTestFuture = (project in file("twitter/test-future"))
+  .settings(name := "daily-utils-twitter-future")
+  .settings(Common.Settings)
+  .settings(Common.PublishMaven)
   .settings(libraryDependencies ++= Seq(
-    "com.typesafe" % "config" % "1.3.1" % Provided,
-    "org.scalatest" %% "scalatest" % "3.0.1" % Test,
-    "org.scalamock" %% "scalamock-scalatest-support" % "3.4.2" % Test
+    { scalaVersion(Twitter.utilCoreDependency).value } % Provided,
+    "org.scalactic" %% "scalactic" % "3.0.1" % Provided,
+    "org.scalatest" %% "scalatest" % "3.0.1" % Provided
   ))
+  .settings(Tests.Dependencies)
