@@ -8,7 +8,7 @@ lazy val typesafeConfig = (project in file("typesafe/config"))
   .settings(Tests.Dependencies)
 
 lazy val twitterTestFuture = (project in file("twitter/test-future"))
-  .settings(name := "twitter-future")
+  .settings(name := "twitter-test-future")
   .settings(Common.Settings)
   .settings(Common.PublishMaven)
   .settings(libraryDependencies ++= Seq(
