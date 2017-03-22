@@ -4,7 +4,7 @@ import sbt._
 object Common {
 
   val Settings: Seq[Def.Setting[_]] = inThisBuild(Seq(
-    organization := "net.dericbourg",
+    organization := "net.dericbourg.daily-utils",
     version := "0.1.0-SNAPSHOT",
     scalaVersion := "2.12.1",
     crossScalaVersions := Seq("2.10.6", "2.11.8", "2.12.1"),
