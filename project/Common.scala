@@ -5,7 +5,7 @@ object Common {
 
   val Settings: Seq[Def.Setting[_]] = Seq(
     organization := "net.dericbourg.daily-utils",
-    version := "0.1.1",
+    version := "0.1.3",
     scalaVersion := "2.12.1",
     crossScalaVersions := Seq("2.10.6", "2.11.8", "2.12.1"),
     scalacOptions ++= Seq("-deprecation", "-unchecked")
@@ -25,14 +25,6 @@ object Common {
         Some("releases" at nexus + "service/local/staging/deploy/maven2")
     },
     pomExtra := {
-      <url>https://github.com/adericbourg/daily-utils</url>
-        <licenses>
-          <license>
-            <name>GNU General Public Licence version 3</name>
-            <url>https://www.gnu.org/licenses/</url>
-            <distribution>repo</distribution>
-          </license>
-        </licenses>
         <scm>
           <connection>scm:git:git@github.com:adericbourg/daily-utils.git</connection>
           <url>scm:git:git@github.com:adericbourg/daily-utils.git</url>
@@ -44,7 +36,7 @@ object Common {
             <id>adericbourg</id>
             <name>Alban Dericbourg</name>
             <email>alban@dericbourg.net</email>
-            <url>https://github.com/adericbourg/daily-utils</url>
+            <url>https://github.com/adericbourg</url>
           </developer>
         </developers>
     }
