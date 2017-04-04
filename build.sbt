@@ -13,6 +13,13 @@ lazy val typesafeConfig = (project in file("typesafe/config"))
   .settings(libraryDependencies += "com.typesafe" % "config" % "1.3.1" % Provided)
   .settings(Tests.Dependencies)
 
+lazy val twitterUtils = (project in file("twitter/utils"))
+  .settings(name := "twitter-utils")
+  .settings(Common.Settings)
+  .settings(Common.PublishMaven)
+  .settings(libraryDependencies += { scalaVersion(Twitter.utilCoreDependency).value } % Provided)
+  .settings(Tests.Dependencies)
+
 lazy val twitterTestFuture = (project in file("twitter/test-future"))
   .settings(name := "twitter-test-future")
   .settings(Common.Settings)

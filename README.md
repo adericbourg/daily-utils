@@ -13,6 +13,50 @@ val config: Config = ???
 val timeout = config.getLongOption("some.timeout.value").getOrElse(1000)
 ```
 
+## Switch between Twitter objects and Scala objects
+
+### Futures
+
+#### Twitter to Scala
+```scala
+import net.dericbourg.daily.utils.twitter.utils.util.TwitterConverters._
+
+val twitterFuture = com.twitter.util.future.Future("Hello world!")
+val scalaFuture = twitterFuture.asScala
+```
+
+#### Scala to Twitter
+```scala
+import net.dericbourg.daily.utils.twitter.utils.util.TwitterConverters._
+
+val scalaFuture = scala.concurrent.Future("Hello world!")
+val twitterFuture = scalaFuture.asTwitter
+```
+
+### Try
+
+#### Twitter to Scala
+
+```scala
+import net.dericbourg.daily.utils.twitter.utils.util.TwitterConverters._
+
+val twitterTry = com.twitter.util.Try {
+  whatever()
+}
+val scalaTry = twitterTry.asScala
+```
+
+#### Scala to Twitter
+
+```scala
+import net.dericbourg.daily.utils.twitter.utils.util.TwitterConverters._
+
+val scalaTry = scala.util.Try {
+  whatever()
+}
+val twitterTry = scalaTry.asTwitter
+```
+
 ## Testing Twitter Futures
 
 ### Using Scalatest
