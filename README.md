@@ -5,6 +5,11 @@ This library aims at providing useful and used code snippets and patterns.
  
 ## Typesafe Config
  
+Usage:
+```
+libraryDependencies += "net.dericbourg.daily-utils" %% "typesafe-config" % "0.1.4"
+```
+ 
 ```scala
 import net.dericbourg.daily.utils.typesafe.config._
 import com.typesafe.config.Config
@@ -14,6 +19,11 @@ val timeout = config.getLongOption("some.timeout.value").getOrElse(1000)
 ```
 
 ## Switch between Twitter objects and Scala objects
+
+Usage:
+```
+libraryDependencies += "net.dericbourg.daily-utils" %% "twitter-utils" % "0.1.4"
+```
 
 ### Futures
 
@@ -58,6 +68,11 @@ val twitterTry = scalaTry.asTwitter
 ```
 
 ## Testing Twitter Futures
+
+Usage:
+```
+libraryDependencies += "net.dericbourg.daily-utils" %% "twitter-test-future" % "0.1.4" % Test
+```
 
 ### Using Scalatest
 
