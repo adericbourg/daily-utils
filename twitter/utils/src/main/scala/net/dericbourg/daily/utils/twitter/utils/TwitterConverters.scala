@@ -1,7 +1,5 @@
 package net.dericbourg.daily.utils.twitter.utils
 
-package util
-
 import com.twitter.{util => twitter}
 
 import scala.concurrent.{ExecutionContext, Future, Promise}
@@ -12,7 +10,7 @@ object TwitterConverters {
   implicit class ScalaToTwitterTry[T](t: Try[T]) {
     def asTwitter: twitter.Try[T] = {
       t match {
-        case Success(r) => twitter.Return(r)
+        case Success(r)  => twitter.Return(r)
         case Failure(ex) => twitter.Throw(ex)
       }
     }
