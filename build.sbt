@@ -4,7 +4,7 @@ lazy val root = project.in(file("."))
   .settings(name := "daily-utils-all")
   .settings(Common.Settings)
   .settings(Common.PublishMaven)
-  .aggregate(typesafeConfig, twitterTestFuture)
+  .aggregate(typesafeConfig, twitterUtils, twitterTestFuture)
 
 lazy val typesafeConfig = (project in file("typesafe/config"))
   .settings(name := "typesafe-config")
