@@ -7,7 +7,7 @@ This library aims at providing useful and used code snippets and patterns.
 
 Usage:
 ```
-libraryDependencies += "net.dericbourg.daily-utils" %% "typesafe-config" % "0.1.4"
+libraryDependencies += "net.dericbourg.daily-utils" %% "typesafe-config" % "0.1.5"
 ```
 
 ```scala
@@ -22,7 +22,7 @@ val timeout = config.getLongOption("some.timeout.value").getOrElse(1000)
 
 Usage:
 ```
-libraryDependencies += "net.dericbourg.daily-utils" %% "twitter-utils" % "0.1.4"
+libraryDependencies += "net.dericbourg.daily-utils" %% "twitter-utils" % "0.1.5"
 ```
 
 ### Futures
@@ -71,7 +71,7 @@ val twitterTry = scalaTry.asTwitter
 
 Usage:
 ```
-libraryDependencies += "net.dericbourg.daily-utils" %% "twitter-test-future" % "0.1.4" % Test
+libraryDependencies += "net.dericbourg.daily-utils" %% "twitter-test-future" % "0.1.5" % Test
 ```
 
 ### Using Scalatest
