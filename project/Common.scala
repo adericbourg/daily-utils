@@ -5,7 +5,7 @@ object Common {
 
   val Settings: Seq[Def.Setting[_]] = Seq(
     organization := "net.dericbourg.daily-utils",
-    version := "0.1.7",
+    version := "0.1.8",
     scalaVersion := "2.12.1",
     crossScalaVersions := Seq("2.10.6", "2.11.8", "2.12.1"),
     scalacOptions ++= Seq("-deprecation", "-unchecked")
