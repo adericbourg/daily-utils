@@ -1,4 +1,4 @@
-# daily-utils
+# daily-utils [![Build Status](https://travis-ci.org/adericbourg/daily-utils.svg?branch=master)](https://travis-ci.org/adericbourg/daily-utils)
 
 Don't you repeat yourself across projects? I'm sure you do.
 This library aims at providing useful and used code snippets and patterns.
