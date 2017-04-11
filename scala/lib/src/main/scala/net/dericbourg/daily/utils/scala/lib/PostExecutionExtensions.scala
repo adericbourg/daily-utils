@@ -1,10 +1,10 @@
 package net.dericbourg.daily.utils.scala.lib
 
-import com.typesafe.scalalogging.Logger
+import org.slf4j.LoggerFactory
 
 object PostExecutionExtensions {
 
-  private val logger = Logger(getClass)
+  private val logger = LoggerFactory.getLogger(getClass)
 
   /**
     * Executes a given block on the given resource and run the post-execution block whatever happens.

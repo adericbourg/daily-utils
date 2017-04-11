@@ -12,10 +12,12 @@ object Common {
   )
 
   val Logging = Seq(
-    libraryDependencies ++= Seq(
-      "com.typesafe.scala-logging" %% "scala-logging" % "3.5.0"
-    )
+    libraryDependencies += "org.slf4j" % "slf4j-api" % "1.7.25"
   )
+
+  def scalaLogging(scalaVersion: String): ModuleID =
+    if (scalaVersion.startsWith("2.10.")) { "com.typesafe.scala-logging" %% "scala-logging-slf4j" % "2.1.2" }
+    else { "com.typesafe.scala-logging" %% "scala-logging" % "3.5.0" }
 
   val PublishMaven: Seq[Def.Setting[_]] = Seq(
     licenses := Seq("GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007" -> url("https://www.gnu.org/licenses/gpl-3.0.en.html")),
