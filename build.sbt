@@ -11,6 +11,7 @@ lazy val scalaLib = (project in file("scala/lib"))
   .settings(name := "scala-lib")
   .settings(Common.Settings)
   .settings(Common.PublishMaven)
+  .settings(Common.Logging)
   .settings(Tests.Dependencies)
 
 lazy val typesafeConfig = (project in file("typesafe/config"))

@@ -1,5 +1,7 @@
 package net.dericbourg.daily.utils.scala.lib
 
+import scala.language.reflectiveCalls
+
 object AutoCloseableExtensions {
 
   /**
@@ -7,11 +9,9 @@ object AutoCloseableExtensions {
     * The resource is guaranteed to be closed after the method returns,
     * regardless of whether an exception is thrown or not.
     */
-  @inline def use[T <: AutoCloseable, R](resource: T)(block: T => R): R = {
-    try {
-      block(resource)
-    } finally {
-      resource.close()
+  @inline def use[T <: {def close() : Unit}, R](resource: T)(block: T => R): R = {
+    PostExecutionExtensions.runWith(resource)(_.close()) { r =>
+      block(r)
     }
   }
 

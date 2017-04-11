@@ -11,6 +11,12 @@ object Common {
     scalacOptions ++= Seq("-deprecation", "-unchecked")
   )
 
+  val Logging = Seq(
+    libraryDependencies ++= Seq(
+      "com.typesafe.scala-logging" %% "scala-logging" % "3.5.0"
+    )
+  )
+
   val PublishMaven: Seq[Def.Setting[_]] = Seq(
     licenses := Seq("GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007" -> url("https://www.gnu.org/licenses/gpl-3.0.en.html")),
     homepage := Some(url("https://github.com/adericbourg/daily-utils")),
