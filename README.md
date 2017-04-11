@@ -98,7 +98,7 @@ libraryDependencies += "net.dericbourg.daily-utils" %% "twitter-test-future" % "
 Scalatest provides the trait `ScalaFutures` to test Future results. Here is the same for Twitter Futures:
 
 ```scala
-import com.twitter.util.future
+import com.twitter.util.Future
 import net.dericbourg.daily.utils.twitter.future.TwitterFutures
 
 class SomeTest extends YourBaseClass with TwitterFutures {
