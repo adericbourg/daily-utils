@@ -4,7 +4,14 @@ lazy val root = project.in(file("."))
   .settings(name := "daily-utils-all")
   .settings(Common.Settings)
   .settings(Common.PublishMaven)
-  .aggregate(typesafeConfig, twitterUtils, twitterTestFuture)
+  .aggregate(scalaLib, typesafeConfig, twitterUtils, twitterTestFuture)
+
+
+lazy val scalaLib = (project in file("scala/lib"))
+  .settings(name := "scala-lib")
+  .settings(Common.Settings)
+  .settings(Common.PublishMaven)
+  .settings(Tests.Dependencies)
 
 lazy val typesafeConfig = (project in file("typesafe/config"))
   .settings(name := "typesafe-config")

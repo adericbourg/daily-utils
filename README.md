@@ -3,11 +3,30 @@
 Don't you repeat yourself across projects? I'm sure you do.
 This library aims at providing useful and used code snippets and patterns.
 
+
+## Scala standard library
+
+Usage:
+```
+libraryDependencies += "net.dericbourg.daily-utils" %% "scala-lib" % "0.1.6"
+```
+
+### Handle `AutoClosable` resources
+
+```scala
+import net.dericbourg.daily.utils.scala.lib.AutoCloseableExtensions.use
+
+use(db.getConnection()) { connection =>
+  connection.prepareStatement("select 1")
+  ...  
+} // connection.close() is called there
+```
+
 ## Typesafe Config
 
 Usage:
 ```
-libraryDependencies += "net.dericbourg.daily-utils" %% "typesafe-config" % "0.1.5"
+libraryDependencies += "net.dericbourg.daily-utils" %% "typesafe-config" % "0.1.6"
 ```
 
 ```scala
@@ -22,7 +41,7 @@ val timeout = config.getLongOption("some.timeout.value").getOrElse(1000)
 
 Usage:
 ```
-libraryDependencies += "net.dericbourg.daily-utils" %% "twitter-utils" % "0.1.5"
+libraryDependencies += "net.dericbourg.daily-utils" %% "twitter-utils" % "0.1.6"
 ```
 
 ### Futures
@@ -71,7 +90,7 @@ val twitterTry = scalaTry.asTwitter
 
 Usage:
 ```
-libraryDependencies += "net.dericbourg.daily-utils" %% "twitter-test-future" % "0.1.5" % Test
+libraryDependencies += "net.dericbourg.daily-utils" %% "twitter-test-future" % "0.1.6" % Test
 ```
 
 ### Using Scalatest
