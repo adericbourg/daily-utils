@@ -43,5 +43,14 @@ class AutoCloseableExtensionsTest extends WordSpec with MockFactory with Matcher
         case _ => fail("Unexpected behavior")
       }
     }
+
+    "not fail if resource was null" in {
+      import AutoCloseableExtensions.use
+
+      val resource: AutoCloseable = null
+      use(resource) { r =>
+        r should be(null)
+      }
+    }
   }
 }
